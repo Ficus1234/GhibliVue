@@ -20,7 +20,7 @@
 
     </div>
     <footer class="footer">
-      <a href="https://github.com/Ficus1234/Ghibli">GitHub Link</a>
+      <a href="https://github.com/Ficus1234/GhibliVue.git">GitHub Link</a>
     </footer>
   </div>
 </template>
