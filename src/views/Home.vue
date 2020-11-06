@@ -33,8 +33,10 @@ margin: 0;
 padding: 0;
 box-sizing: border-box;
 }
+#app {
+  background-color: darkslategrey;
+}
 .body {
-background-color: darkslategrey;
 height: 100%;
 }
 /*containter to give the photo and its container space and float them right*/
@@ -185,7 +187,7 @@ margin: 20px;
     align-items: center;
     background-color: white;
     max-width: 100vw;
-    margin: 0 30px 30px 30px;
+    margin: 20px 30px 30px 30px;
   }
 }
 @media only screen and (min-width: 901px) {
@@ -201,9 +203,6 @@ margin: 20px;
     max-width: 100vw;
     margin: 30px 30px 55px 30px;
     flex-direction: row;
-  }
-  .photo-box {
-
   }
   .ghibli-box {
     max-width: 45vw;

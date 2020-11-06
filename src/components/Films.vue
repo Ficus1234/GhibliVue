@@ -9,9 +9,7 @@
         <img class="ghibli-photo" :src="'/images/movies/'+movie.image">
       </div>
       <p class="ghibli-info">{{movie.description}}</p>
-      <svg id = "svgelem" height = "50" xmlns = "http://www.w3.org/2000/svg">
-        <polygon id="star" v-on:click="addOrRemove(movie)" points = "25,2.5 10,45 47.5,15 2.5,15 40,45" fill = "grey"/>
-      </svg>
+      <p class="add" v-on:click="addOrRemove(movie)">Add to Favorites</p>
     </div>
   </div>
 </template>
@@ -51,11 +49,14 @@ export default {
 </script>
 
 <style scoped>
-  #svgelem {
-    position: absolute;
-    top: px;
+  .add {
+    background-color: darkslategrey;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 3px;
   }
-  polygon:hover {
-    fill: lightslategrey;
+  .add:hover {
+    color: darkgrey;
   }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="body-2">
-    <div class="movies">
+    <div class="the-movies">
       <div class="message-box">
         <div v-show="this.$root.$data.favsEmpty" class="message">
           <h1>You don't have any favorite Ghibli Films! What a terrible shame.</h1>
@@ -14,12 +14,7 @@
           <div class="ghibli-title">
             <h2>{{movie.title}}</h2>
           </div>
-
-          <div class="the-star">
-            <svg id = "svgelem" height = "50" xmlns = "http://www.w3.org/2000/svg">
-              <polygon class="star" v-on:click="addOrRemove(movie)" points = "25,2.5 10,45 47.5,15 2.5,15 40,45" fill = "white"/>
-            </svg>
-          </div>
+          <p class="add" v-on:click="addOrRemove(movie)">Remove</p>
         </div>
       </div>
 
@@ -61,22 +56,34 @@
 </script>
 
 <style scoped>
-  #svgelem {
-    position: relative;
-    left: 97%;
+  .the-movies {
+    height: 100vh;
   }
-  polygon:hover {
-    fill: black;
+  .fav-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px;
+  }
+  .add {
+    background-color: white;
+    color: darkslategrey;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 3px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+  }
+  .add:hover {
+    color: darkgrey;
   }
   .ghibli-box {
     margin-top: 30px;
   }
   .message {
     color: darkgrey;
-  }
-  .body-2 {
-  background-color: darkslategrey;
-  height: 100vh;
   }
   .message-box {
     display: flex;
@@ -86,9 +93,26 @@
   }
   .the-box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     height: 100%;
+    background-color: darkslategrey;
   }
-
+  .body-2 {
+    display: flex;
+    height: 100%;
+  }
+  @media only screen and (max-width: 900px) {
+    .body-2 {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  @media only screen and (min-width: 901px) {
+      .the-box {
+        width: 100vw;
+        column-count: 3;
+        column-gap: 20px;
+      }
+    }
 </style>
