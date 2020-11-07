@@ -2,7 +2,11 @@
   <div id="app">
     <b-navbar style="background-color: white" toggleable>
       <b-navbar-brand>
-        <router-link style="color: darkslategrey" to="/">Home</router-link>
+        <router-link style="color: darkslategrey" to="/">
+          <div class="icon">
+            <img src="https://www.tasteofcinema.com/wp-content/uploads/2015/06/studio_ghibli_facts.jpg" alt="">
+          </div>
+        </router-link>
       </b-navbar-brand>
 
       <b-navbar-toggle target="navbar-toggle-collapse">
@@ -20,6 +24,9 @@
           <b-nav-item>
             <router-link to="/favorites">Your Favorite Ghibli Films</router-link>
           </b-nav-item>
+          <b-nav-item>
+            <router-link to="/joe">Joe Hisaishi</router-link>
+          </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -34,5 +41,12 @@
   .nav-link a:hover{
     color: black;
     text-decoration: none;
+  }
+  .icon {
+
+  }
+  .icon img {
+    height: 40px;
+    width: 64px;
   }
 </style>

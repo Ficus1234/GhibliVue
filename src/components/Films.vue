@@ -9,7 +9,9 @@
         <img class="ghibli-photo" :src="'/images/movies/'+movie.image">
       </div>
       <p class="ghibli-info">{{movie.description}}</p>
-      <p class="add" v-on:click="addOrRemove(movie)">Add to Favorites</p>
+      <div class="center">
+        <p class="add" v-on:click="addOrRemove(movie)">Add to Favorites</p>
+      </div>
     </div>
   </div>
 </template>
@@ -22,6 +24,7 @@ export default {
   },
   methods: {
     addOrRemove(movie) {
+      this.$root.$data.clicked = !this.$root.$data.clicked;
       let favs = this.$root.$data.favorites;
       if (favs.length === 0) {
         this.$root.$data.favorites.push(movie);
@@ -49,14 +52,24 @@ export default {
 </script>
 
 <style scoped>
-  .add {
+  .dsg {
     background-color: darkslategrey;
-    color: white;
+  }
+  .add {
+    background-color: darkgrey;
+    color: darkslategrey;
     padding: 10px 20px;
     margin: 20px;
     border-radius: 3px;
+    width: 160px;
   }
   .add:hover {
-    color: darkgrey;
+    color: black;
+  }
+  @media only screen and (min-width: 901px) {
+    .center {
+      display: flex;
+      justify-content: center;
+    }
   }
 </style>

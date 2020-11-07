@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import AllFilms from "../views/all-films.vue";
 import About from "../views/About.vue";
 import Favorites from "../views/Favorites.vue"
+import Joe from "../views/Joe";
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,11 @@ const routes = [
     path: '/favorites',
     name: 'Favorites',
     component: Favorites
+  },
+  {
+    path: '/joe',
+    name: 'Joe',
+    component: Joe
   }
 ];
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="body-2">
+  <div class="app">
     <div class="the-movies">
       <div class="message-box">
         <div v-show="this.$root.$data.favsEmpty" class="message">
@@ -14,14 +14,15 @@
           <div class="ghibli-title">
             <h2>{{movie.title}}</h2>
           </div>
-          <p class="add" v-on:click="addOrRemove(movie)">Remove</p>
+          <p id="add" v-on:click="addOrRemove(movie)">Remove from Favorites</p>
         </div>
       </div>
 
-    </div>
+
     <footer class="footer">
       <a href="https://github.com/Ficus1234/GhibliVue.git">GitHub Link</a>
     </footer>
+    </div>
   </div>
 </template>
 <script>
@@ -33,11 +34,13 @@
           this.$root.$data.favorites.push(movie);
           this.$root.$data.favsEmpty = false;
           this.$root.$data.notEmpty = true;
+          this.$root.$data.clicked = true;
         }
         else {
           for(var i = 0; i < favs.length; i++){
             if (favs[i].title === movie.title) {
               favs.splice(i, 1); i--;
+              this.$root.$data.clicked = true;
               if (favs.length === 0) {
                 this.$root.$data.favsEmpty = true;
                 this.$root.$data.notEmpty = false;
@@ -48,6 +51,7 @@
           this.$root.$data.favorites.push(movie);
           this.$root.$data.favsEmpty = false;
           this.$root.$data.notEmpty = true;
+          this.$root.$data.clicked = true;
         }
       }
     }
@@ -57,7 +61,8 @@
 
 <style scoped>
   .the-movies {
-    height: 100vh;
+    height: 100%;
+    padding-bottom: 75px;
   }
   .fav-box {
     display: flex;
@@ -66,17 +71,17 @@
     justify-content: flex-start;
     margin: 20px;
   }
-  .add {
+  #add {
     background-color: white;
     color: darkslategrey;
     padding: 10px 20px;
     margin: 20px;
     border-radius: 3px;
-    width: 110px;
+    width: 210px;
     display: flex;
     justify-content: center;
   }
-  .add:hover {
+  #add:hover {
     color: darkgrey;
   }
   .ghibli-box {
@@ -93,10 +98,7 @@
   }
   .the-box {
     display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
     height: 100%;
-    background-color: darkslategrey;
   }
   .body-2 {
     display: flex;
@@ -107,12 +109,18 @@
       flex-direction: column;
       align-items: center;
     }
+    .the-box {
+      justify-content: flex-start;
+      flex-direction: column;
+    }
   }
   @media only screen and (min-width: 901px) {
       .the-box {
-        width: 100vw;
-        column-count: 3;
-        column-gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .fav-box {
+        width: 40vw;
       }
     }
 </style>

@@ -16,7 +16,8 @@ let data = {
   movies: mock,
   favorites: [],
   favsEmpty: true,
-  notEmpty: false
+  notEmpty: false,
+  clicked: true
 };
 
 new Vue({
