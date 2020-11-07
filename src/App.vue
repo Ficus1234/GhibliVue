@@ -25,7 +25,7 @@
             <router-link to="/favorites">Your Favorite Ghibli Films</router-link>
           </b-nav-item>
           <b-nav-item>
-            <router-link to="/joe">Joe Hisaishi</router-link>
+            <router-link to="/joe">Important People</router-link>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
