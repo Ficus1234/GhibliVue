@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="buttons">
-        <a class="button" href="./all-movies.html">Explore Ghibli Films</a>
+        <router-link class="button" to="/all-films">Explore Ghibli Films</router-link>     
       </div>
     </div>
 

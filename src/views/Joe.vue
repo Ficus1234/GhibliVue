@@ -1,6 +1,6 @@
 <template>
   <div class="joe-items">
-    <h1>A Couple of Influential People:</h1>
+    <h1>A Couple of Key People:</h1>
     <h2>Hayao Miyazaki</h2>
     <div class="joe-photo">
       <img src="https://treatmentofvisions.files.wordpress.com/2014/03/hayao-miyazaki.jpg" alt="">
